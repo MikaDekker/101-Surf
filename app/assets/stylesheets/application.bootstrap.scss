@@ -16,14 +16,6 @@
   line-height: 0;
 }
 
-body{
-  pointer-events: auto;
-}
-
-a{
-  cursor: pointer;
-}
-
 button {
   align-items: center;
   appearance: none;
@@ -133,8 +125,7 @@ p {
 
 a:-webkit-any-link {
   text-decoration: none;
-  cursor: auto;
-  padding: 0.5rem;
+  cursor: pointer;
   color: rgb(60, 60, 60);
   font-weight: 300;
 }
