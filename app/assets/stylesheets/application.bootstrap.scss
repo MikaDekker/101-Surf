@@ -1,5 +1,5 @@
-@import 'bootstrap/scss/bootstrap';
-@import 'bootstrap-icons/font/bootstrap-icons';
+@import "bootstrap/scss/bootstrap";
+@import "bootstrap-icons/font/bootstrap-icons";
 
 * {
   box-sizing: border-box;
@@ -610,18 +610,19 @@ iframe {
 }
 
 .card-img {
-  border-top-left-radius: 24px;
-  border-top-right-radius: 24px;
-
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
   width: 100%;
   height: 20rem;
 }
 
 .img-card {
-  border-top-left-radius: 24px;
-  border-top-right-radius: 24px;
-  width: 100%;
-  height: 20rem;
+  padding: 2rem;
+  border-radius: 50px;
+  width: 250px;
+  height: 300px;
 }
 
 .card-text {
