@@ -38,7 +38,7 @@ button {
   line-height: normal;
   max-width: 100%;
   overflow: visible;
-  padding: 2px 24px;
+  padding: 2px 32px;
   position: relative;
   text-align: center;
   text-transform: none;
@@ -462,12 +462,6 @@ nav ul {
   hr {
     width: 20vw;
   }
-
-  .easy-grid {
-    display: block;
-    margin: auto;
-    padding: 1rem;
-  }
 }
 
 /**-----------------------------------------------------CONTACT-----------------------------------------------------**/
@@ -479,7 +473,7 @@ nav ul {
 }
 
 .contact-box {
-  width: 840px;
+  width: 1200px;
   border-radius: 24px;
   margin: auto;
   background-color: #fff;
@@ -522,16 +516,25 @@ iframe {
   iframe {
     width: 1100px;
   }
+  .contact-box {
+    width: 1100px;
+  }
 }
 
 @media (max-width: 1300px) {
   iframe {
     width: 900px;
   }
+  .contact-box {
+    width: 900px;
+  }
 }
 
 @include media-breakpoint-down(xl) {
   iframe {
+    width: 800px;
+  }
+  .contact-box {
     width: 800px;
   }
 }
@@ -602,7 +605,7 @@ iframe {
   height: 32rem;
   border: none;
   box-shadow: 0 10px 15px 1px rgba(0, 0, 0, 0.1),
-  0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
 }
 
 .cards {
@@ -671,6 +674,8 @@ iframe {
 
 .about-face {
   border-radius: 50px;
+  box-shadow: 0 10px 15px 3px rgba(0, 0, 0, 0.1),
+    0 4px 6px 2px rgba(0, 0, 0, 0.05);
 }
 
 .about-txt {
@@ -753,9 +758,11 @@ iframe {
 }
 
 .test-face {
-  border-radius: 100%;
+  border-radius: 50%;
   width: 15rem;
-  padding-bottom: 3rem;
+  margin-bottom: 3rem;
+  box-shadow: 0 10px 15px 3px rgba(0, 0, 0, 0.1),
+    0 4px 6px 2px rgba(0, 0, 0, 0.05);
 }
 
 .test-name {
@@ -785,6 +792,7 @@ iframe {
   width: 100%;
   overflow: hidden;
   padding-top: 150px;
+  padding-bottom: 10rem;
 }
 .section {
   position: relative;
@@ -931,8 +939,8 @@ label.color-6 {
   left: 0;
   width: 100%;
   height: 100%;
-  display: block;
-  z-index: 1;
+  display: none;
+  z-index: 0;
   background-image: linear-gradient(196deg, #f1a9a9, #e66767);
   transition: all 250ms linear;
   transition-delay: 300ms;
@@ -987,7 +995,7 @@ label.color-6 {
   letter-spacing: 1px;
   font-size: 13px;
   line-height: 1.2;
-  color: #fff;
+  color: #c2c2c2;
   margin-top: 0;
   margin-bottom: 10px;
 }
@@ -999,12 +1007,12 @@ label.color-6 {
   display: inline-block;
   border: none;
   cursor: pointer;
-  color: #ffeba7;
+  color: #c2c2c2;
   font-family: "Poppins", sans-serif;
   font-weight: 600;
   font-size: 18px;
   line-height: 1.2;
-  color: #fff;
+  color: #4b4b4b;
   margin-right: 25px;
   opacity: 0.5;
 }
@@ -1051,9 +1059,13 @@ label.color-6 {
   line-height: 1.1;
 }
 
+.buy-btn {
+  color: white;
+  margin: 0;
+  font-weight: 300;
+}
 .btn {
   position: relative;
-  font-family: "Poppins", sans-serif;
   font-weight: 500;
   font-size: 14px;
   line-height: 2;
@@ -1189,10 +1201,204 @@ label.color-6 {
   }
 }
 
+/**-----------------------------------------------------PAY-----------------------------------------------------**/
+
+form {
+  justify-content: center;
+}
+
+.pay-card {
+  display: block;
+  height: auto;
+  border-radius: 24px;
+  background-color: rgb(255, 255, 255);
+  border: none;
+  box-shadow: 0 10px 15px 1px rgba(0, 0, 0, 0.1),
+    0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  padding-bottom: 4rem;
+}
+
+.pay-cards {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  gap: 4rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding-top: 8rem;
+  padding-bottom: 8rem;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.delivery-display{
+  display: none;
+  font-weight: bold;
+}
+@media screen and (max-width: 700px) {
+  .pay-cards {
+    display: block;
+    margin: auto;
+  }
+
+  .pay-card {
+    margin-top: 3rem;
+  }
+}
+
+@media screen and (max-width: 340px) {
+  .pay-price-display{
+    display: none;
+  }
+  .pay-small{
+    display: none;
+  }
+  .delivery-display{
+    display: inline;
+  }
+}
+
+/* From Uiverse.io by Maximinodotpy */
+.inputGroup {
+  margin: 1.5rem 0 1.5rem 0;
+  max-width: 385px;
+  position: relative;
+}
+
+.inputGroup input {
+  font-size: 100%;
+  padding: 0.8em;
+  outline: none;
+  border: 1px solid rgb(200, 200, 200);
+  background-color: transparent;
+  border-radius: 24px;
+  width: 100%;
+}
+
+.inputGroup label {
+  font-size: 100%;
+  position: absolute;
+  left: 0;
+  padding: 0.8em;
+  margin-left: 0.5em;
+  pointer-events: none;
+  transition: all 0.3s ease;
+  color: rgb(100, 100, 100);
+}
+
+.inputGroup :is(input:focus, input:valid) ~ label {
+  transform: translateY(-50%) scale(0.9);
+  margin: 0em;
+  margin-left: 1.3em;
+  padding: 0.4em;
+  background-color: #ffffff;
+}
+
+.inputGroup :is(input:focus, input:valid) {
+  border-color: rgb(150, 150, 200);
+}
+
+/* From Uiverse.io by escannord */
+.radio-input input {
+  display: none;
+}
+
+.radio-input label {
+  --border-color: #a1b0d8;
+
+  border: 1px solid var(--border-color);
+  border-radius: 24px;
+  min-width: 5rem;
+  margin-right: 1rem;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+  align-items: center;
+}
+
+.radio-input input:checked + label {
+  --border-color: rgb(150, 150, 200);
+  border-color: var(--border-color);
+  border-width: 2px;
+}
+.radio-input label:hover {
+  --border-color: rgb(150, 150, 200);
+  border-color: var(--border-color);
+}
+
+.radio-input {
+  display: flex;
+  align-items: center;
+}
+
+.pay-circle {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: rgb(189, 187, 207);
+  margin-right: 0.5rem;
+  position: relative;
+}
+
+.radio-input input:checked + label span.pay-circle::before {
+  content: "";
+  display: inline;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgb(150, 150, 200);
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+}
+.pay-text {
+  display: flex;
+  align-items: center;
+}
+
+.pay-price {
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+  font-weight: bold;
+  margin-left: 2rem;
+}
+
+.pay-small {
+  font-size: 10px;
+  color: rgb(136, 138, 139);
+  font-weight: 100;
+}
+
+@media screen and (max-width: 1100px) {
+  .radio-input {
+    display: block;
+  }
+
+  .radio-input label {
+    margin-top: 1rem;
+  }
+
+  .radio-input {
+    margin-left: 0;
+  }
+}
+
+.submit-btn {
+  display: flex;
+  padding-right: 2rem;
+  float: inline-end;
+  margin-top: 2rem;
+  margin-right: 1rem;
+  font-weight: bold;
+}
+
 /**-----------------------------------------------------FOOTER-----------------------------------------------------**/
 
 footer {
-  z-index: 2;
+  z-index: 10;
   height: 250px;
   background: linear-gradient(
     60deg,
@@ -1229,6 +1435,14 @@ footer {
     display: flex;
     justify-content: center;
   }
+
+  footer {
+    height: 300px;
+    border-top-left-radius: 40%;
+    border-top-right-radius: 40%;
+  }
+
+  .footer-socials {
+    padding-top: 4.5rem;
+  }
 }
-
-
